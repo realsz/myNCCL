@@ -156,3 +156,104 @@ prog.c:9: warning: implicit declaration of function ¡®printf¡¯
 prog.c:9: warning: incompatible implicit declaration of built-in function ¡®printf¡¯
 prog.c:4: warning: unused variable ¡®b¡¯
 */
+
+
+//******--07--****************************************
+//error  keywords as variable
+
+#include <stdio.h>
+ int main(void)
+ {
+    int char = 1;
+    
+	printf("char is %d\n", char);
+	
+ 	return 0;  
+ }
+
+/*erro msg ideone: http://ideone.com/kw1zcM
+prog.c: In function ¡®main¡¯:
+prog.c:5: error: two or more data types in declaration specifiers
+prog.c:5: error: expected identifier or ¡®(¡¯ before ¡®=¡¯ token
+prog.c:7: error: expected expression before ¡®char¡¯
+*/
+
+//******--08--****************************************
+//error  Forget define variables
+
+#include <stdio.h>
+ int main(void)
+ {
+    a = 1;
+    
+	printf("a is %d\n", a);
+	
+ 	return 0;  
+ }
+
+/*erro msg ideone: http://ideone.com/gIJhpi
+prog.c: In function ¡®main¡¯:
+prog.c:4: error: ¡®a¡¯ undeclared (first use in this function)
+prog.c:4: error: (Each undeclared identifier is reported only once
+prog.c:4: error: for each function it appears in.)
+*/
+
+//******--08--****************************************
+//error  Forget ;
+
+#include <stdio.h>
+ int main(void)
+ {
+   int a = 1
+    
+	printf("a is %d\n", a);
+	
+ 	return 0;  
+ }
+
+/*erro msg ideone: http://ideone.com/sUpgJj
+prog.c: In function ¡®main¡¯:
+prog.c:6: error: expected ¡®,¡¯ or ¡®;¡¯ before ¡®printf¡¯
+prog.c:4: warning: unused variable ¡®a¡¯
+*/
+
+//******--09--****************************************
+//error  Out of bounds
+
+#include <stdio.h>
+  int main(void)
+  {
+    short int a ;
+    a = 567890000;
+     
+     printf("a is %d\n", a);
+        
+        return 0;  
+  }
+
+/*erro msg ideone: http://ideone.com/EZAjcv
+
+input: Ÿo
+output:
+a is 20560
+
+*/
+
+
+//******--10--****************************************
+//error  forget & in scanf
+
+#include <stdio.h>
+  int main(void)
+  {
+    int a, b ;
+    scanf("%d%d",a, b);
+     
+     printf("a is %d,and b is \n", a, b);
+        
+        return 0;  
+  }
+
+/*erro msg ideone: 
+
+*/
