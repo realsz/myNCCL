@@ -63,9 +63,10 @@ int main(void)
 		sum = sum + num;
 		
 		num--;
-	
+		
+		printf("num = %d\n", num);
 	}
-	while ( num <= 0 );
+	while ( num >= 0 );
 	printf("sum = %d\n", sum);
 	
 	return 0;
