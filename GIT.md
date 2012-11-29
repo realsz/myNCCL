@@ -34,22 +34,22 @@ GIT 使用说明介绍（含 MD说明）：
     2.3 (这一步不是必须要做的，如果有问题可以做) git config  --global push.default simple
 
 #添加文件或项目至git
-  1.cd ~
-  2.mkdir github
-  3.cd github
-  4.git clone git@github.com:limingth/myNCCL.git
-  
-  5.cd myNCCL
-  5.1 edit hell.c
-    注意此时使用git status 查看文件状态，并有下一步的提醒： 文件状态等 untracked modified unstage
-  
-  6.git add hello.c
-  7.git commit -a -m "add hello.c"
-  8.git push
-    可以使用git status 查看状态   修改一下 hello.c ，然后重复 6，7 两步即可
-  8. 如果要添加大量代码，可以用 git add .
-  9. 如果要删除某个文件，可以用 git rm a.c
-    
+      1.cd ~
+      2.mkdir github
+      3.cd github
+      4.git clone git@github.com:limingth/myNCCL.git
+      
+      5.cd myNCCL
+      5.1 edit hell.c
+        注意此时使用git status 查看文件状态，并有下一步的提醒： 文件状态等 untracked modified unstage
+      
+      6.git add hello.c
+      7.git commit -a -m "add hello.c"
+      8.git push
+        可以使用git status 查看状态   修改一下 hello.c ，然后重复 6，7 两步即可
+      8. 如果要添加大量代码，可以用 git add .
+      9. 如果要删除某个文件，可以用 git rm a.c
+        
       ps：如果 在web上面修改后 本地也做了修改但是没有上传push。此时操作为
           1.先git pull 最新的下来，再合并提交。push...
       
