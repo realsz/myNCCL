@@ -59,70 +59,7 @@ global_3 = 0xbfdb2fb0
  
  */
  
-//***************--char--*************************
- 
-//printf 3 global and local addr
- #include <stdio.h>
- char global_1 = 1;
- char global_2 = 2;
-char global_3 = 3;
- 
- int main(void)
- {
-    printf("diff by addr \n");
-	
-    printf("global_1 = %p\n", &global_1);
-	printf("global_2 = %p\n", &global_2);
-	printf("global_3 = %p\n", &global_3);
-	
-	 char local_1 = 4;
-	 char local_2 = 5;
-	 char local_3 = 6;
-	 
-	 printf("local_1 = %p\n", &local_1);
-	 printf("local_2 = %p\n", &local_2);
-	 printf("local_3 = %p\n", &local_3);
-	 
-     char global_1 = 7;
-	 char global_2 = 8;
-	 char global_3 = 9;
-	 
-	 printf("global_1 = %p\n", &global_1);
-	 printf("global_2 = %p\n", &global_2);
-	 printf("global_3 = %p\n", &global_3);
-        
-    
-        return 0;
- }
- 
- //printf result
- /*
- input: Ÿo
-output:
-diff by addr 
-global_1 = 0x804a018
-global_2 = 0x804a019
-global_3 = 0x804a01a
-local_1 = 0xbfdfcf47
-local_2 = 0xbfdfcf46
-local_3 = 0xbfdfcf45
-global_1 = 0xbfdfcf44
-global_2 = 0xbfdfcf43
-global_3 = 0xbfdfcf42
- */
- 
-  /*     char    conclusion      
-1. char have small than int ,just 1byte addr space
- 
- */
- 
- /*      short   conclusion  
- 1.short have 2 byte space 
- */
- 
- /*      float   conclusion  
- 1.short have 4 byte space 
- */
+
  
  
  
@@ -130,29 +67,190 @@ global_3 = 0xbfdfcf42
  
  
  #include <stdio.h>
- 
+
  extern int __executable_start;
  extern int _start;
- 
+
  extern char etext[];
  extern char edata[];
- 
+
  int global = 100;
- 
+
  int main(void)
  {
      printf("hello, everyone!\n");
- 
+
      printf("__executable_start= %p\n", &__executable_start);
      printf("_start = %p\n", &_start);
      printf("main = %p\n", main);
      printf("text segment end at %p\n\n", etext);
- 
+
      printf("global at %p\n", &global);
-     
-     printf("global is %d\n", &global + 1);
-     
+
+
+     printf("global is %d\n", (int)&global );
+
+     printf("global is %d\n", (int)(&global + 1));
+
      printf("data segment end at %p\n", edata);
- 
+
      return 0;
- }   
+ }
+ 
+ /*
+ shangz@shangz-ME051:/tftpboot$ ./a.out 
+hello, everyone!
+__executable_start= 0x8048000
+_start = 0x8048360
+main = 0x8048414
+text segment end at 0x80485a6
+
+global at 0x804a018
+global is 134520856
+global is 134520860
+data segment end at 0x804a01c
+ */
+ 
+ // ----------------------- char--------------
+ 
+ #include <stdio.h>
+
+ extern char __executable_start;
+ extern char _start;
+
+ extern char etext[];
+ extern char edata[];
+
+ char global = 100;
+
+ int main(void)
+ {
+     printf("hello, everyone!\n");
+
+     printf("__executable_start= %p\n", &__executable_start);
+     printf("_start = %p\n", &_start);
+     printf("main = %p\n", main);
+     printf("text segment end at %p\n\n", etext);
+
+     printf("global at %p\n", &global);
+
+
+     printf("global is %d\n", (int)&global );
+
+     printf("global is %d\n", (int)(&global + 1));
+
+     printf("data segment end at %p\n", edata);
+
+     return 0;
+ }
+ 
+ /*
+ shangz@shangz-ME051:/tftpboot$ ./a.out 
+hello, everyone!
+__executable_start= 0x8048000
+_start = 0x8048360
+main = 0x8048414
+text segment end at 0x80485a6
+
+global at 0x804a018
+global is 134520856
+global is 134520857
+data segment end at 0x804a01c
+ */
+ 
+ 
+ //---------------------float-------------------
+ 
+ #include <stdio.h>
+
+ extern short __executable_start;
+ extern short _start;
+
+ extern short etext[];
+ extern short edata[];
+
+ short global = 100;
+
+ int main(void)
+ {
+     printf("hello, everyone!\n");
+
+     printf("__executable_start= %p\n", &__executable_start);
+     printf("_start = %p\n", &_start);
+     printf("main = %p\n", main);
+     printf("text segment end at %p\n\n", etext);
+
+     printf("global at %p\n", &global);
+
+
+     printf("global is %d\n", (int)&global );
+
+     printf("global is %d\n", (int)(&global + 1));
+
+     printf("data segment end at %p\n", edata);
+
+     return 0;
+ }
+ 
+ /*
+ shangz@shangz-ME051:/tftpboot$ ./a.out 
+hello, everyone!
+__executable_start= 0x8048000
+_start = 0x8048360
+main = 0x8048414
+text segment end at 0x80485a6
+
+global at 0x804a018
+global is 134520856
+global is 134520858
+data segment end at 0x804a01c
+ */
+ 
+ //------------------float---------------
+ #include <stdio.h>
+
+ extern float __executable_start;
+ extern float _start;
+
+ extern float etext[];
+ extern float edata[];
+
+ float global = 100;
+
+ int main(void)
+ {
+     printf("hello, everyone!\n");
+
+     printf("__executable_start= %p\n", &__executable_start);
+     printf("_start = %p\n", &_start);
+     printf("main = %p\n", main);
+     printf("text segment end at %p\n\n", etext);
+
+     printf("global at %p\n", &global);
+
+
+     printf("global is %d\n", (int)&global );
+
+     printf("global is %d\n", (int)(&global + 1));
+
+     printf("data segment end at %p\n", edata);
+
+     return 0;
+ }
+
+ 
+ 
+ 
+ /*
+ shangz@shangz-ME051:/tftpboot$ ./a.out 
+hello, everyone!
+__executable_start= 0x8048000
+_start = 0x8048360
+main = 0x8048414
+text segment end at 0x80485a6
+
+global at 0x804a018
+global is 134520856
+global is 134520860
+data segment end at 0x804a01c
+ */
