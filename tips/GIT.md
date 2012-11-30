@@ -58,3 +58,5 @@ GIT 使用说明介绍（含 MD说明）：
 ###      MarkDown Use
 ------
 ------
+#中文字符显示乱码问题：
+    1.字符编码 : UTF-8 Unicode text
