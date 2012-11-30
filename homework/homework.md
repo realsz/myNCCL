@@ -66,6 +66,12 @@ Unit 1 是《新概念C语言》系列课程的第一部分，共有24个Lesson�
 * 相对跳转 Relative Jump 
 	- 位置无关代码 PIC (Position Independent Code)
 
+#My note:
+	查询/命令分开 
+	循环：有特例的在外面，无特例的在内部循环。
+	（先判断再执行，还是先执行再执行）
+
+
 ## Lesson 4 [Judge a number odd or even](Lesson-4.md) 判断奇偶
 ### 基本概念讲解
 * 条件分支 Condition 
@@ -75,6 +81,21 @@ Unit 1 是《新概念C语言》系列课程的第一部分，共有24个Lesson�
 	- 代码缩进 (如果你知道自己在做什么，三层就足够了)
 * 函数的传值和传址 Parameter's value and address
 	- 程序二进制接口规范 ABI (Application Binary Interface)
+
+#My note：
+	1.全局变量--数据段 0x8040000 低地址  局部变量：0xbfbe8b0c(举例),有高地址到低地址分配
+	2.比较-跳转指令
+	循环--->跳转指令   
+	汇编   函数调用->call （通过printf查看相关代码定位代码）
+	x86 汇编 addl   cmpl (比较指令) jle (跳转 le <= )
+	编译
+	gcc -S xxx.c 
+	gcc xxx.c -o a.out
+	objdump -d a.out 反汇编
+	
+	位置无关代码：
+
+
 
 ## Lesson 5 [Summarize all numbers from 1 to 100](Lesson-5.md) 从1加到100求和
 ### 基本概念讲解
