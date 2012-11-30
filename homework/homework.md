@@ -28,6 +28,8 @@ Unit 1 是《新概念C语言》系列课程的第一部分，共有24个Lesson�
 * 程序的执行 Program Execution
 	- 进程的概念 Process 
 	- 执行流程 Execution Sequence
+#My note：
+	echo $? 查看返回值  在需要调试的地方加上return 0;提前结束，便于debug程序。
 
 ## Lesson 2 [Let's say hello to world](Lesson-2.md) 打印输出
 ### 基本概念讲解
