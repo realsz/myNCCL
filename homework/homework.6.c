@@ -118,9 +118,11 @@ int main(void)
 	
 	for(i = 100; i < 1000; i++)
 	{
-		ones = i % 10;
-		tens = (i % 100) - ones;
 		hundr = i / 100;
+		tens = (i / 10) - hundr * 10;
+		ones = i % 10;
+		
+		
 		
 		if(ones * ones * ones + tens * tens * tens + hundr * hundr * hundr == i)
 		
