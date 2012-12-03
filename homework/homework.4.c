@@ -4,32 +4,32 @@
 int main(void)
 
 {
-	int A,B;
+	int num_a,num_b;
 	
-	printf("Input the A number:");
-	scanf("%d",&A);
-	//printf("A number is %d", A );
+	printf("Input the num_a number:");
+	scanf("%d",&num_a);
+	//printf("num_a number is %d", num_a );
 	
-	printf("Input the B number:");
-	scanf("%d",&B);
+	printf("Input the num_b number:");
+	scanf("%d",&num_b);
 	
-	//printf("B number is %d", B );
+	//printf("num_b number is %d", num_b );
 	
-	while ( A != B)   //judge a&b and loop
+	while ( num_a != num_b)   //judge a&b and loop
 	{
-		if ( A > B)
+		if ( num_a > num_b)
 		{
-			printf("B %d less than A,pls input again:", B);
-			scanf("%d",&B);
+			printf("num_b %d less than num_a,pls input again:", num_b);
+			scanf("%d",&num_b);
 		}
 		else{
-			printf("B %d more than A,pls input again:", B);
-			scanf("%d",&B);
+			printf("num_b %d more than num_a,pls input again:", num_b);
+			scanf("%d",&num_b);
 		}
 	
 	} 
 	
-	printf("Oh,Yeah,U get it B %d\n", B);
+	printf("Oh,Yeah,U get it num_b %d\n", num_b);
 		
 	return 0;
 }
