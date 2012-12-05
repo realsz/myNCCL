@@ -10,61 +10,47 @@ int main(void)
 {
 	int i, j;
 	int input_a, input_b;
-	
+
 	printf("\n");
 	
-	for(i = 0; i < 5; i++)	
-	{
-
-		for(j = 0; j < 5; j++)
+	do
+	{ 
+		for(i = 0; i < 5; i++)	
 		{
-			printf("0\t");
-		}
-		
+			for(j = 0; j < 5; j++)
+			{
+				if( input_a == i && input_b == j )
+					printf("1\t");
+				else			
+					printf("0\t");
+			}
 		printf("\n\n\n\n\n");
-	}
-	
-	printf("--------------------------------------\n");
+		}
 
-//input input_a	
+	//input input_a	
 	do
 	{
-	printf("Pls input the input_a number:(less than 5)\n");
-	scanf("%d", &input_a);
+		printf("Pls input the input_a number:(from 0-4)\n");
+		scanf("%d", &input_a);
 	}
 	while(input_a >= 5);
-	
-	printf("Yeah~! U input the right number input_a %d!!\n", input_a);
 
-//input input_b	
+		printf("Yeah~! U input the right number input_a %d!!\n\n", input_a);
+
+	//input input_b	
 	do
 	{
-	printf("Pls input the input_b number:(less than 5)\n");
-	scanf("%d", &input_b);
+		printf("Pls input the input_b number:(from 0-4)\n");
+		scanf("%d", &input_b);
 	}
 	while(input_b >= 5);
-	
-	printf("Yeah~! U input the right number input_a %d!!\n", input_b);
-	
-//the new input number	
-	printf("\n");
-	
-	for(i = 0; i < 5 - input_a; i++)	
-	{
 
-		for(j = 0; j < 5 - input_b; j++)
-		{
-			printf("1\t");
-		}
+		printf("Yeah~! U input the right number input_a %d!!\n\n", input_b);
 		
-		printf("\n\n\n\n\n");
-	}
-	
-	printf("--------------------------------------\n");
-	
-	
+	} while ( 1 );
+
 	return 0;
-}
+}	
 
 
 /*Perfect number*/

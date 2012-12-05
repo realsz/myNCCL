@@ -1,0 +1,7 @@
+
+#ignore the test.c file
+test.c
+
+#ignore the *.o and *.a files
+*.[oa]
+
