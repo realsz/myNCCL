@@ -45,7 +45,7 @@ int main(void)
 	}
 	while(input_b >= 5);
 
-		printf("Yeah~! U input the right number input_a %d!!\n\n", input_b);
+		printf("Yeah~! U input the right number input_b %d!!\n\n", input_b);
 		
 	} while ( 1 );
 
