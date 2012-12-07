@@ -28,9 +28,15 @@ int main(void)
 				{	
 					if(input_c >= input_a)
 					{
-						num_a = (input_c - input_a) * 5 + (input_d - input_b - 1);
+						num_a = (input_c - input_a) * 5 + (input_d - input_b - 1);	
+						
 						if(input_c == input_a && input_d == input_b)
 							num_a = 0;
+						
+						if(input_c == input_a && input_d < input_b)	
+						{	
+							num_a = (4 - input_a + input_c) * 5 + (4 - input_b + input_d);
+						}
 					}
 					else
 					{
@@ -48,7 +54,7 @@ int main(void)
 		if( input_a > i || input_b > i ||input_c > i || input_d > i )
 			printf("first running~!\n\n");
 		else	
-			printf("the coordinate number A£¨%d, %d£©between B(%d, %d) is %d \n ",input_a, input_b, input_c, input_d, num_a);		
+			printf("the coordinate number A (%d, %d) between B(%d, %d) is %d \n ",input_a, input_b, input_c, input_d, num_a);		
 
 		//input input_a	
 		do
