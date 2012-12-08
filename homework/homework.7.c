@@ -62,7 +62,7 @@ int main(void)
 			printf("Pls input the input_a number:(less than 5)\n");
 			scanf("%d", &input_a);
 		}
-		while(input_a >= 5);
+		while(input_a >= 5 || input_a < 0);
 
 		printf("Yeah~! U input the right number input_a %d!!\n\n", input_a);
 
@@ -72,7 +72,7 @@ int main(void)
 			printf("Pls input the input_b number:(less than 5)\n");
 			scanf("%d", &input_b);
 		}
-		while(input_b >= 5);
+		while(input_b >= 5 || input_b < 0);
 
 		printf("Yeah~! U input the right number input_b %d!!\n\n", input_b);
 	
@@ -84,7 +84,7 @@ int main(void)
 			printf("Pls input the input_c number:(less than 5)\n");
 			scanf("%d", &input_c);
 		}
-		while(input_c >= 5);
+		while(input_c >= 5 || input_c < 0);
 
 		printf("Yeah~! U input the right number input_c %d!!\n\n", input_a);
 
@@ -94,7 +94,7 @@ int main(void)
 			printf("Pls input the input_d number:(less than 5)\n");
 			scanf("%d", &input_d);
 		}
-		while(input_d >= 5);
+		while(input_d >= 5 || input_d < 0);
 
 		printf("Yeah~! U input the right number input_d %d!!\n\n", input_b);
 				
@@ -105,7 +105,77 @@ int main(void)
 	return 0;
 }
 
-/*------------------------7.2------------------------------------*/
+/*------------------------7.2---Which ponit can queen take-----------------*/
 
+#include <stdio.h>
+
+#define PRINT(x)    printf("--> %s--line-%d-- "#x" is %d\n",__FUNCTION__,__LINE__,x)
+//#define PRINT(x)
+
+int main(void)
+
+{
+	int i, j;
+	int input_a, input_b;
+
+	printf("\n");
+	
+	do
+	{ 
+		for(i = 0; i < 5; i++)	
+		{
+			for(j = 0; j < 5; j++)
+			{
+				if( input_a == i && input_b == j )
+										
+					printf("1\t");
+						
+				else			
+					printf("0\t");
+			}
+		printf("\n\n\n\n\n");
+		}
+
+	if( input_a > i || input_b > i || input_a < 0 ||input_b < 0 )
+		printf("first running~!\n\n");
+	else
+	{	
+		for(i = 0; i < 5; i++)	
+		{
+			for(j = 0; j < 5; j++)
+			{
+				if(input_a == i || input_b == j ||(i - input_a) == (j - input_b))
+				
+					printf("Queen take (%d, %d) \n", i, j);
+			}
+		}
+	}	
+		
+	//input input_a	
+	do
+	{
+		printf("Pls input the input_a number:(less than 5)\n");
+		scanf("%d", &input_a);
+	}
+	while(input_a >= 5 || input_a < 0);
+
+		printf("Yeah~! U input the right number input_a %d!!\n\n", input_a);
+
+	//input input_b	
+	do
+	{
+		printf("Pls input the input_b number:(less than 5)\n");
+		scanf("%d", &input_b);
+	}
+	while(input_b >= 5 || input_b < 0 );
+
+		printf("Yeah~! U input the right number input_a %d!!\n\n", input_b);
+	
+	printf("The ponit is (%d , %d)\n",input_a, input_b);
+	
+	} while ( 1 );
+
+	return 0;
+}	
 
 
