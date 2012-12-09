@@ -178,4 +178,4 @@ int main(void)
 	return 0;
 }	
 
-
+/*------------------------7.3---print the triangle yang-----------------*/
