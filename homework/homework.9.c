@@ -81,7 +81,7 @@ int main(void)
        }
 	   buf[j++] = '\0';
 
-       printf(" 2- buf[%d] is %s\n", NUM, buf);
+       printf(" The buf[%d] is %s\n", NUM, buf);
 
        return 0;
 
