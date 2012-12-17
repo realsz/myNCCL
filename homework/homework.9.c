@@ -51,6 +51,42 @@
  
  
  /*--9.3.c--*/
- 
+#include <stdio.h>
+
+#define NUM   100
+
+int main(void)
+{
+       int i, j;
+       char input_c[NUM];
+       char buf[NUM];
+//       int num = 0;
+       printf("Pls input the char input_c\n");
+       gets(input_c);
+
+       printf("U input the char is %s\n", input_c);
+
+	   
+       for(j = 0, i = 0; input_c[i] != '\0'; i++)
+       {
+			
+			if(input_c[i] == ' ' && input_c[i+1] == ' ')
+			
+				continue;
+			
+            buf[j] = input_c[i]; 
+			j++;
+						   
+//		printf(" 1- buf[%d] is %s\n", NUM, buf);
+       }
+	   buf[j++] = '\0';
+
+       printf(" 2- buf[%d] is %s\n", NUM, buf);
+
+       return 0;
+
+}
+
+
  
  
