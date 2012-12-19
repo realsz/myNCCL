@@ -62,3 +62,10 @@ int main(void)
 	printf("counter is %d \n", counter);
     return 0;
 }
+
+/*--10.2--*/
+/*
+ *Print the year calendar
+ */ 
+ 
+ 
